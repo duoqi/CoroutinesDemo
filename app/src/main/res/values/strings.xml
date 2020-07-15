@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CoroutinesDemo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+</resources>
