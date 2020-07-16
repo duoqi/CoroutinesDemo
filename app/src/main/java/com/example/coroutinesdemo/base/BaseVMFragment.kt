@@ -8,14 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-abstract class BaseVMFragment<VM : BaseViewModel>(useDataBinding: Boolean = true) : Fragment() {
+abstract class BaseVMFragment(useDataBinding: Boolean = true) : Fragment() {
 
     private val _useBinding = useDataBinding
     protected lateinit var mBinding: ViewDataBinding
-    protected lateinit var mViewModel: VM
 
     abstract fun getLayoutResId(): Int
-    abstract fun initVM(): VM
     abstract fun initView()
     abstract fun startObserve()
 
@@ -32,7 +30,6 @@ abstract class BaseVMFragment<VM : BaseViewModel>(useDataBinding: Boolean = true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        mViewModel = initVM()
         if (_useBinding) mBinding.lifecycleOwner = this
         initView()
         startObserve()

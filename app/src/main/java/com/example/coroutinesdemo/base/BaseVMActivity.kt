@@ -5,16 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseVMActivity<VM : BaseViewModel>(useDataBinding: Boolean = true) :
+abstract class BaseVMActivity(useDataBinding: Boolean = true) :
     AppCompatActivity() {
 
     private val _useBinding = useDataBinding
-    lateinit var mViewModel: VM
     protected lateinit var mBinding: ViewDataBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mViewModel = initVM()
         startObserve()
         if (_useBinding) {
             mBinding = DataBindingUtil.setContentView(this, getLayoutResId())
@@ -24,7 +22,6 @@ abstract class BaseVMActivity<VM : BaseViewModel>(useDataBinding: Boolean = true
     }
 
     open fun getLayoutResId(): Int = 0
-    abstract fun initVM(): VM
     abstract fun initView()
     abstract fun startObserve()
 

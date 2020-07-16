@@ -2,7 +2,6 @@ package com.example.coroutinesdemo.binding
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.EditText
 import androidx.databinding.BindingAdapter
 

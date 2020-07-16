@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo
+package com.example.coroutinesdemo.common
 
 import com.example.coroutinesdemo.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,4 +22,7 @@ val repositoryModule = module {
 //    single { ShareRepository() }
 }
 
-val appModule = listOf(viewModelModule, repositoryModule)
+val appModule = listOf(
+    viewModelModule,
+    repositoryModule
+)
