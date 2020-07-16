@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.ui.home
+package com.example.coroutinesdemo.model.bean
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

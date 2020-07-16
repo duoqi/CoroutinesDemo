@@ -1,9 +1,13 @@
 package com.example.coroutinesdemo.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.coroutinesdemo.base.BaseViewModel
+import com.example.coroutinesdemo.model.api.WanRetrofitClient
+import com.example.coroutinesdemo.model.bean.User
+import com.example.coroutinesdemo.util.MD5Util
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class HomeViewModel : BaseViewModel() {
 
@@ -15,7 +19,27 @@ class HomeViewModel : BaseViewModel() {
         get() = _uiState
 
     fun login() {
-        Log.e("HomeViewModel", "login")
+        launchOnUI {
+            try {
+                val map = HashMap<String, String?>()
+                map["username"] = userName.value
+                map["password"] = MD5Util.encode(passWord.value!!)
+                map["grant_type"] = "password"
+                val data = withContext(Dispatchers.IO) {
+                    WanRetrofitClient.service.login(map)
+                }
+                if (data != null) {
+                    _uiState.value = LoginUiState(isSuccess = data, enableLoginButton = true)
+                } else {
+                    _uiState.value = LoginUiState(isError = "获取失败", enableLoginButton = true)
+                }
+
+            } catch (e: Exception) {
+                /*请求异常的话在这里处理*/
+                e.printStackTrace()
+                _uiState.value = LoginUiState(isError = e.message, enableLoginButton = true)
+            }
+        }
     }
 
     private fun isInputValid(userName: String, passWord: String): Boolean =
@@ -33,8 +57,8 @@ class HomeViewModel : BaseViewModel() {
 }
 
 class LoginUiState<T>(
-    isLoading: Boolean = false,
-    isSuccess: T? = null,
-    isError: String? = null,
+    val isLoading: Boolean = false,
+    val isSuccess: T? = null,
+    val isError: String? = null,
     val enableLoginButton: Boolean = false
 )

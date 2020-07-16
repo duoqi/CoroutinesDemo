@@ -11,7 +11,7 @@ val viewModelModule = module {
 val repositoryModule = module {
 //    single { WanRetrofitClient.getService(WanService::class.java, WanService.BASE_URL) }
 //    single { CoroutinesDispatcherProvider() }
-//    single { LoginRepository(get()) }
+//    single { LoginRepository() }
 //    single { SquareRepository() }
 //    single { HomeRepository() }
 //    single { ProjectRepository() }
