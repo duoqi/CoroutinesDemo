@@ -5,7 +5,6 @@ import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import com.example.coroutinesdemo.R
 import com.example.coroutinesdemo.base.BaseVMFragment
-import okhttp3.internal.wait
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseVMFragment() {
@@ -31,8 +30,14 @@ class HomeFragment : BaseVMFragment() {
 //                    dismissProgressDialog()
 //                    activity?.toast(err)
 //                }
+                if(it.isLoading){
+
+                }
                 it.isSuccess?.let {
                     Toast.makeText(activity,it.access_token,Toast.LENGTH_SHORT).show()
+                }
+                it.isError?.let {
+                    Toast.makeText(activity,it,Toast.LENGTH_SHORT).show()
                 }
             })
 

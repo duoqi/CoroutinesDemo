@@ -21,6 +21,7 @@ class HomeViewModel : BaseViewModel() {
     fun login() {
         launchOnUI {
             try {
+                _uiState.value = LoginUiState(isLoading = true)
                 val map = HashMap<String, String?>()
                 map["username"] = userName.value
                 map["password"] = MD5Util.encode(passWord.value!!)
