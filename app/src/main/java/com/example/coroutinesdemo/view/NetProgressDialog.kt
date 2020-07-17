@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.ui
+package com.example.coroutinesdemo.view
 
 import android.app.Dialog
 import android.content.Context
@@ -7,11 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.coroutinesdemo.R
 
-/**
- * @author taodq
- * @date 2019/8/12.
- * @description：进度框
- */
 class NetProgressDialog(context: Context) : Dialog(context) {
 
     private lateinit var ivProgress: ImageView

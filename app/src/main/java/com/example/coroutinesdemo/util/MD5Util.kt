@@ -3,13 +3,6 @@ package com.example.coroutinesdemo.util
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-/**
- * description ： MD5工具类
- *
- * author : taodq
- * date : 2019-09-04 21:17
- */
-
 object MD5Util {
 
     fun encode(text: String): String {

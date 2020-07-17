@@ -47,7 +47,7 @@ open class BaseRepository {
         return coroutineScope {
             if (response == null) {
                 errorBlock?.let { it() }
-                HttpResult.Error(IOException("获取失败"))
+                HttpResult.Error(exception = IOException())
             } else {
                 successBlock?.let { it() }
                 HttpResult.Success(response)

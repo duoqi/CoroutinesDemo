@@ -2,7 +2,6 @@ package com.example.coroutinesdemo
 
 import android.app.Application
 import com.example.coroutinesdemo.common.appModule
-import com.example.coroutinesdemo.ui.NetProgressDialog
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
