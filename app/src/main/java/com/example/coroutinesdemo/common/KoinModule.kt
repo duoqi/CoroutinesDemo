@@ -1,17 +1,16 @@
 package com.example.coroutinesdemo.common
 
+import com.example.coroutinesdemo.model.repository.LoginRepository
 import com.example.coroutinesdemo.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    viewModel { HomeViewModel() }
+    viewModel { HomeViewModel(get()) }
 }
 
 val repositoryModule = module {
-//    single { WanRetrofitClient.getService(WanService::class.java, WanService.BASE_URL) }
-//    single { CoroutinesDispatcherProvider() }
-//    single { LoginRepository() }
+    single { LoginRepository() }
 //    single { SquareRepository() }
 //    single { HomeRepository() }
 //    single { ProjectRepository() }

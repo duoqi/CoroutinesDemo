@@ -10,7 +10,7 @@ import com.example.coroutinesdemo.R
 /**
  * @author taodq
  * @date 2019/8/12.
- * description：进度框
+ * @description：进度框
  */
 class NetProgressDialog(context: Context) : Dialog(context) {
 

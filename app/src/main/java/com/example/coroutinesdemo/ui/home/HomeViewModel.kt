@@ -3,13 +3,11 @@ package com.example.coroutinesdemo.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.coroutinesdemo.base.BaseViewModel
-import com.example.coroutinesdemo.model.api.WanRetrofitClient
 import com.example.coroutinesdemo.model.bean.User
-import com.example.coroutinesdemo.util.MD5Util
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.example.coroutinesdemo.model.bean.checkResult
+import com.example.coroutinesdemo.model.repository.LoginRepository
 
-class HomeViewModel : BaseViewModel() {
+class HomeViewModel(private val repository: LoginRepository) : BaseViewModel() {
 
     val userName = MutableLiveData<String>("")
     val passWord = MutableLiveData<String>("")
@@ -20,26 +18,14 @@ class HomeViewModel : BaseViewModel() {
 
     fun login() {
         launchOnUI {
-            try {
-                _uiState.value = LoginUiState(isLoading = true)
-                val map = HashMap<String, String?>()
-                map["username"] = userName.value
-                map["password"] = MD5Util.encode(passWord.value!!)
-                map["grant_type"] = "password"
-                val data = withContext(Dispatchers.IO) {
-                    WanRetrofitClient.service.login(map)
-                }
-                if (data != null) {
-                    _uiState.value = LoginUiState(isSuccess = data, enableLoginButton = true)
-                } else {
-                    _uiState.value = LoginUiState(isError = "获取失败", enableLoginButton = true)
-                }
+            _uiState.value = LoginUiState(isLoading = true)
+            val result = repository.login(username = userName.value!!, password = passWord.value!!)
+            result.checkResult(onSuccess = {
+                _uiState.value = LoginUiState(isSuccess = it, enableLoginButton = true)
+            }, onError = {
+                _uiState.value = LoginUiState(isError = it, enableLoginButton = true)
+            })
 
-            } catch (e: Exception) {
-                /*请求异常的话在这里处理*/
-                e.printStackTrace()
-                _uiState.value = LoginUiState(isError = e.message, enableLoginButton = true)
-            }
         }
     }
 
