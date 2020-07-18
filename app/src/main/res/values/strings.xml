@@ -6,4 +6,9 @@
     <string name="password">密码</string>
     <string name="login">登录</string>
     <string name="username">用户名</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank1_fragment">Hello blank1 fragment</string>
+    <string name="hello_blank2_fragment">Hello blank2 fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank3_fragment">Hello blank3 fragment</string>
 </resources>

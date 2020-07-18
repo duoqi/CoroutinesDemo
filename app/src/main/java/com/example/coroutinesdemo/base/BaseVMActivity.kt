@@ -4,15 +4,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.example.coroutinesdemo.view.NetProgressDialog
 
 abstract class BaseVMActivity(useDataBinding: Boolean = true) :
     AppCompatActivity() {
 
     private val _useBinding = useDataBinding
     protected lateinit var mBinding: ViewDataBinding
+    protected var netDialog: NetProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        netDialog = NetProgressDialog(this)
         startObserve()
         if (_useBinding) {
             mBinding = DataBindingUtil.setContentView(this, getLayoutResId())

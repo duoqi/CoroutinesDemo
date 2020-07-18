@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.example.coroutinesdemo.view.NetProgressDialog
 
 abstract class BaseVMFragment(useDataBinding: Boolean = true) : Fragment() {
 
@@ -16,12 +17,14 @@ abstract class BaseVMFragment(useDataBinding: Boolean = true) : Fragment() {
     abstract fun getLayoutResId(): Int
     abstract fun initView()
     abstract fun startObserve()
+    protected var netDialog: NetProgressDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        netDialog = activity?.let { NetProgressDialog(it) }
         return if (_useBinding) {
             mBinding = DataBindingUtil.inflate(inflater, getLayoutResId(), container, false)
             mBinding.root

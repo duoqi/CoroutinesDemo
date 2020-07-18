@@ -1,5 +1,6 @@
 package com.example.coroutinesdemo.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import com.example.coroutinesdemo.R
+import com.example.coroutinesdemo.ui.navigation.NavigationDemoActivity
 
 class DashboardFragment : Fragment() {
 
@@ -28,6 +31,9 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        textView.setOnClickListener{
+          startActivity(Intent(activity, NavigationDemoActivity::class.java))
+        }
         return root
     }
 }
