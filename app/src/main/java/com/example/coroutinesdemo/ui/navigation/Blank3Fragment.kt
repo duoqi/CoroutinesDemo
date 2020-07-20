@@ -3,7 +3,7 @@ package com.example.coroutinesdemo.ui.navigation
 import com.example.coroutinesdemo.R
 import com.example.coroutinesdemo.base.BaseVMFragment
 
-class Blank3Fragment : BaseVMFragment(useDataBinding = false) {
+class Blank3Fragment : BaseVMFragment() {
 
     override fun getLayoutResId(): Int = R.layout.fragment_blank3
 

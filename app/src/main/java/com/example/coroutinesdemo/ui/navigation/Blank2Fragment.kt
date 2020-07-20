@@ -2,9 +2,10 @@ package com.example.coroutinesdemo.ui.navigation
 
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
-import com.example.coroutinesdemo.Blank2Adapter
+import androidx.navigation.fragment.NavHostFragment
 import com.example.coroutinesdemo.R
 import com.example.coroutinesdemo.base.BaseVMFragment
+import com.example.coroutinesdemo.adapters.Blank2Adapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Blank2Fragment : BaseVMFragment() {
@@ -23,6 +24,9 @@ class Blank2Fragment : BaseVMFragment() {
         }
         mAdapter.data = datas
         mViewModel.getData()
+        mAdapter.setOnItemClickListener { _, _, _ ->
+            NavHostFragment.findNavController(this).navigate(R.id.blank3Fragment)
+        }
     }
 
     override fun startObserve() {
@@ -36,6 +40,5 @@ class Blank2Fragment : BaseVMFragment() {
             })
         }
     }
-
 
 }

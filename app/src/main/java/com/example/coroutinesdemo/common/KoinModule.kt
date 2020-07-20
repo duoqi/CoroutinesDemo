@@ -13,14 +13,6 @@ val viewModelModule = module {
 
 val repositoryModule = module {
     single { LoginRepository() }
-//    single { SquareRepository() }
-//    single { HomeRepository() }
-//    single { ProjectRepository() }
-//    single { CollectRepository() }
-//    single { SystemRepository() }
-//    single { NavigationRepository() }
-//    single { SearchRepository() }
-//    single { ShareRepository() }
 }
 
 val appModule = listOf(
