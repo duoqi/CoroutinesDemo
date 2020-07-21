@@ -1,5 +1,6 @@
 package com.example.coroutinesdemo.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -29,6 +30,12 @@ class Blank3Adapter :
     class Blank3ViewHolder(private val binding: ItemBlank2Binding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            binding.setClickListener {
+                Log.e(TAG, binding.bean!!.plantId)
+            }
+        }
+
         fun bind(item: TestBean) {
             binding.apply {
                 bean = item
@@ -36,6 +43,10 @@ class Blank3Adapter :
             }
         }
 
+    }
+
+    companion object{
+        private const val TAG = "Blank3Adapter"
     }
 }
 

@@ -19,15 +19,19 @@ class Blank1Fragment : BaseVMFragment(useDataBinding = false) {
             })
         }
 
-        Log.e("Blank1Fragment", "initView")
+        Log.e(TAG, "initView")
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.e("Blank1Fragment", "onAttach")
+        Log.e(TAG, "onAttach")
     }
 
     override fun startObserve() {
+    }
+
+    companion object {
+        private const val TAG = "Blank1Fragment"
     }
 
 }
