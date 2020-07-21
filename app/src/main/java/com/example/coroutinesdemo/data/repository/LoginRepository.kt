@@ -1,10 +1,10 @@
-package com.example.coroutinesdemo.model.repository
+package com.example.coroutinesdemo.data.repository
 
 import com.example.coroutinesdemo.base.BaseRepository
-import com.example.coroutinesdemo.model.api.WanRetrofitClient
-import com.example.coroutinesdemo.model.bean.HttpResult
-import com.example.coroutinesdemo.model.bean.User
-import com.example.coroutinesdemo.util.MD5Util
+import com.example.coroutinesdemo.api.WanRetrofitClient
+import com.example.coroutinesdemo.data.bean.HttpResult
+import com.example.coroutinesdemo.data.bean.User
+import com.example.coroutinesdemo.utils.MD5Util
 
 /**
  * @author tdq

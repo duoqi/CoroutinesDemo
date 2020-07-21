@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.model.bean
+package com.example.coroutinesdemo.data.bean
 
 sealed class HttpResult<out T : Any> {
 

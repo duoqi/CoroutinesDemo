@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.model.api
+package com.example.coroutinesdemo.api
 
 import com.example.coroutinesdemo.BuildConfig
 import okhttp3.OkHttpClient

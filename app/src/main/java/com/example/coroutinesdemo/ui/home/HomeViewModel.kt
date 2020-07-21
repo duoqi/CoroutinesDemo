@@ -3,9 +3,9 @@ package com.example.coroutinesdemo.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.coroutinesdemo.base.BaseViewModel
-import com.example.coroutinesdemo.model.bean.User
-import com.example.coroutinesdemo.model.bean.checkResult
-import com.example.coroutinesdemo.model.repository.LoginRepository
+import com.example.coroutinesdemo.data.bean.User
+import com.example.coroutinesdemo.data.bean.checkResult
+import com.example.coroutinesdemo.data.repository.LoginRepository
 
 class HomeViewModel(private val repository: LoginRepository) : BaseViewModel() {
 

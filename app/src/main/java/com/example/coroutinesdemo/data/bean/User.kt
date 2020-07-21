@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.model.bean
+package com.example.coroutinesdemo.data.bean
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

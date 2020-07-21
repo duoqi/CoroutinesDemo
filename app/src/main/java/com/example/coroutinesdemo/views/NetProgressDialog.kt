@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.view
+package com.example.coroutinesdemo.views
 
 import android.app.Dialog
 import android.content.Context

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.example.coroutinesdemo.view.NetProgressDialog
+import com.example.coroutinesdemo.views.NetProgressDialog
 
 abstract class BaseVMActivity(useDataBinding: Boolean = true) :
     AppCompatActivity() {

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.example.coroutinesdemo.view.NetProgressDialog
+import com.example.coroutinesdemo.views.NetProgressDialog
 
 abstract class BaseVMFragment(useDataBinding: Boolean = true) : Fragment() {
 

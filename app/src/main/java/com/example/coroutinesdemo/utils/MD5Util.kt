@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.util
+package com.example.coroutinesdemo.utils
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException

@@ -1,7 +1,7 @@
 package com.example.coroutinesdemo.base
 
-import com.example.coroutinesdemo.model.bean.HttpResult
-import com.example.coroutinesdemo.model.bean.WanResponse
+import com.example.coroutinesdemo.data.bean.HttpResult
+import com.example.coroutinesdemo.data.bean.WanResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import retrofit2.HttpException
