@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.adapters
+package com.example.coroutinesdemo.data.adapters
 
 import android.text.Editable
 import android.text.TextWatcher

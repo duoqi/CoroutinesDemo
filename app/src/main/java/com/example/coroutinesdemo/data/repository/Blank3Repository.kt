@@ -8,7 +8,7 @@ import com.example.coroutinesdemo.base.BaseRepository
 import com.example.coroutinesdemo.data.db.entity.TestBean
 import kotlinx.coroutines.flow.Flow
 
-class Blank3Repository() : BaseRepository() {
+class Blank3Repository : BaseRepository() {
 
     fun getTestDatas(): Flow<PagingData<TestBean>> {
         return Pager(

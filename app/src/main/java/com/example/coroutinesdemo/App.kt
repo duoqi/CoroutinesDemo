@@ -1,10 +1,13 @@
 package com.example.coroutinesdemo
 
 import android.app.Application
-import com.example.coroutinesdemo.common.appModule
+import com.example.coroutinesdemo.data.db.AppDatabase
+import com.example.coroutinesdemo.di.appModule
 import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 /**
  * @author tdq
@@ -17,10 +20,11 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            androidLogger()
+            androidLogger(Level.DEBUG)
             androidContext(this@App)
+            androidFileProperties()
             modules(appModule)
         }
-
+        AppDatabase.getInstance(this)
     }
 }

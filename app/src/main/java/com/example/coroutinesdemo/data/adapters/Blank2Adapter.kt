@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.adapters
+package com.example.coroutinesdemo.data.adapters
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.module.LoadMoreModule

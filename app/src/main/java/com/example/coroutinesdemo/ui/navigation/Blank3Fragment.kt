@@ -4,7 +4,7 @@ import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.example.coroutinesdemo.R
-import com.example.coroutinesdemo.adapters.Blank3Adapter
+import com.example.coroutinesdemo.data.adapters.Blank3Adapter
 import com.example.coroutinesdemo.base.BaseVMFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

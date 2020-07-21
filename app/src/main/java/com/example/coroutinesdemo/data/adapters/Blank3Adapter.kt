@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.adapters
+package com.example.coroutinesdemo.data.adapters
 
 import android.util.Log
 import android.view.LayoutInflater

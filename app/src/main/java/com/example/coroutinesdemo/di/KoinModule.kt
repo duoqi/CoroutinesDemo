@@ -1,4 +1,4 @@
-package com.example.coroutinesdemo.common
+package com.example.coroutinesdemo.di
 
 import com.example.coroutinesdemo.data.repository.Blank3Repository
 import com.example.coroutinesdemo.data.repository.LoginRepository

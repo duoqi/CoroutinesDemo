@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.example.coroutinesdemo.R
 import com.example.coroutinesdemo.base.BaseVMFragment
-import com.example.coroutinesdemo.adapters.Blank2Adapter
+import com.example.coroutinesdemo.data.adapters.Blank2Adapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Blank2Fragment : BaseVMFragment() {
