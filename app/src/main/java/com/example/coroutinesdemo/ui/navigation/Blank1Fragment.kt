@@ -1,8 +1,6 @@
 package com.example.coroutinesdemo.ui.navigation
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.coroutinesdemo.R
 import com.example.coroutinesdemo.base.BaseVMFragment
@@ -19,12 +17,26 @@ class Blank1Fragment : BaseVMFragment(useDataBinding = false) {
             })
         }
 
-        Log.e(TAG, "initView")
-    }
+//        val lists = mutableListOf<TestBean>()
+//        lists.add(TestBean("2${System.currentTimeMillis()}", "2", "3", 4, 5, "123"))
+//        lifecycleScope.launch {
+//            context?.let { it ->
+//                val dao = AppDatabase.getInstance(it).testDao()
+//                dao.insertAll(lists)
+//                dao.selectAll().observe(viewLifecycleOwner, Observer {
+//                    Log.e(TAG, it[0].plantId)
+//                    Log.e(TAG, it.size.toString())
+//                })
+//            }
+//
+//        }
+//        context?.let {
+//            AppDatabase.getInstance(it).testDao().selectAll().observe(viewLifecycleOwner, Observer {
+//                Log.e(TAG, it[0].plantId)
+//                Log.e(TAG, it.size.toString())
+//            })
+//        }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        Log.e(TAG, "onAttach")
     }
 
     override fun startObserve() {

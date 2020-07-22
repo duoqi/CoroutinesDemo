@@ -27,6 +27,8 @@ class Blank2Fragment : BaseVMFragment() {
         mAdapter.setOnItemClickListener { _, _, _ ->
             NavHostFragment.findNavController(this).navigate(R.id.blank3Fragment)
         }
+
+
     }
 
     override fun startObserve() {

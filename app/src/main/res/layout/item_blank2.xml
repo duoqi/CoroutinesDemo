@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="clickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="bean"
             type="com.example.coroutinesdemo.data.db.entity.TestBean" />
@@ -19,8 +21,8 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="@{bean.plantId}"
             android:onClick="@{clickListener}"
+            android:text="@{bean.plantId}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

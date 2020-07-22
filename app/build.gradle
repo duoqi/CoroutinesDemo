@@ -16,6 +16,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        //指定room.schemaLocation生成的文件路径
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -34,6 +40,14 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+    //kotlin DSL
+//    configurations.all {
+//        resolutionStrategy {
+//            force("org.antlr:antlr4-runtime:4.5.3")
+//            force("org.antlr:antlr4-tool:4.5.3")
+//        }
+//    }
 
 }
 
@@ -63,10 +77,14 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$rootProject.koin_version"
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.baseRecyclerViewAdapterHelper_version"
     implementation "androidx.paging:paging-runtime:$rootProject.paging_version"
+
+    // room 数据库
     kapt "androidx.room:room-compiler:$rootProject.room_version"
     implementation "androidx.room:room-runtime:$rootProject.room_version"
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$rootProject.room_version"
+
+    // workManager 后台任务执行
     implementation "androidx.work:work-runtime-ktx:$rootProject.work_version"
 
 }

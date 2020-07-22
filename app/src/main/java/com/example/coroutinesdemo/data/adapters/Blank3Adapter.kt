@@ -45,7 +45,7 @@ class Blank3Adapter :
 
     }
 
-    companion object{
+    companion object {
         private const val TAG = "Blank3Adapter"
     }
 }

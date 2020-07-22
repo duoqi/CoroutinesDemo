@@ -25,6 +25,5 @@ class App : Application() {
             androidFileProperties()
             modules(appModule)
         }
-        AppDatabase.getInstance(this)
     }
 }
